@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise Guidance - IIITDM Gym</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                        url('https://imgs.search.brave.com/ifcCtAyPf4M_a3v9SS331Rv8QsrjwB_JnuL1LXydxyE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTM1/MjU4MzU4NC9waG90/by90cmVhZG1pbGwt/d2l0aG91dC1wZW9w/bGUtaW4tYS1neW0u/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PWJZaUJGM19pekJk/WlJNa2diWUdEZU1t/Tm5uUE9DTUNZaUFx/eVhxTnYwOVk9') no-repeat center center/cover;
+            min-height: 100vh;
+            padding: 20px;
+            color: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .back-button {
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: white;
+            text-decoration: none;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            color: #4CAF50;
+            transform: translateX(-3px);
+        }
+
+        .exercise-section {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .exercise-section h2 {
+            color: #4CAF50;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+
+        .exercise-list {
+            list-style: none;
+        }
+
+        .exercise-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-left: 3px solid #4CAF50;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .exercise-info {
+            flex: 1;
+        }
+
+        .video-btn {
+            background: #2196F3;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .video-btn:hover {
+            background: #1976D2;
+            transform: translateY(-2px);
+        }
+
+        /* Modal styles for video */
+        .video-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .video-container {
+            width: 90%;
+            max-width: 800px;
+            background: #000;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .close-video {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        .exercise-name {
+            font-weight: bold;
+            color: #fff;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .exercise-details {
+            color: #ddd;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .exercise-section {
+                padding: 15px;
+            }
+
+            .video-container {
+                width: 95%;
+            }
+        }
+
+        .video-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            max-width: 560px;
+            height: 315px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="firstpage.html" class="back-button">← Back to Home</a>
+            <h1>Exercise Guidance</h1>
+            <p>Proper form and technique guide for different muscle groups</p>
+        </div>
+
+        <div class="exercise-section">
+            <h2>Chest</h2>
+            <ul class="exercise-list">
+                <li class="exercise-item">
+                    <div class="exercise-info">
+                        <div class="exercise-name">Bench Press</div>
+                        <div class="exercise-details">4 sets x 12-15 reps | Rest: 90 seconds between sets</div>
+                    </div>
+                    <button class="video-btn" onclick="window.open('https://www.youtube.com/watch?v=SCVCLChPQFY', '_blank')">Watch Tutorial</button>
+                </li>
+                <li class="exercise-item">
+                    <div class="exercise-info">
+                        <div class="exercise-name">Incline Dumbbell Press</div>
+                        <div class="exercise-details">3 sets x 12 reps | Rest: 60 seconds between sets</div>
+                    </div>
+                    <button class="video-btn" onclick="window.open('https://www.youtube.com/watch?v=Fv5EYoJfRt4', '_blank')">Watch Tutorial</button>
+                </li>
+                <li class="exercise-item">
+                    <div class="exercise-info">
+                        <div class="exercise-name">Push-Ups</div>
+                        <div class="exercise-details">3 sets x 15-20 reps | Rest: 60 seconds between sets</div>
+                    </div>
+                    <button class="video-btn" onclick="window.open('https://www.youtube.com/watch?v=WDIpL0pjun0', '_blank')">Watch Tutorial</button>
+                </li>
+            </ul>
+        </div>
+
+        <div class="exercise-section">
+            <h2>Back</h2>
+            <ul class="exercise-list">
+                <li class="exercise-item">
+                    <div class="exercise-info">
+                        <div class="exercise-name">Lat Pull-Downs</div>
+                        <div class="exercise-details">4 sets x 12 reps | Rest: 90 seconds between sets</div>
+                    </div>
+                    <button class="video-btn" onclick="window.open('https://www.youtube.com/watch?v=JGeRYIZdojU', '_blank')">Watch Tutorial</button>
+                </li>
+                <li class="exercise-item">
+                    <div class="exercise-info">
+                        <div class="exercise-name">Seated Cable Rows</div>
+                        <div class="exercise-details">3 sets x 12-15 reps | Rest: 60 seconds between sets</div>
+                    </div>
+                    <button class="video-btn" onclick="window.open('https://www.youtube.com/watch?v=SLOtxuaStoQ', '_blank')">Watch Tutorial</button>
+                </li>
+                <li class="exercise-item">
+                    <div class="exercise-info">
+                        <div class="exercise-name">Deadlifts</div>
+                        <div class="exercise-details">4 sets x 8-10 reps | Rest: 120 seconds between sets</div>
+                    </div>
+                    <button class="video-btn" onclick="window.open('https://www.youtube.com/watch?v=AweC3UaM14o', '_blank')">Watch Tutorial</button>
+                </li>
+            </ul>
+        </div>
+
+        <div class="exercise-section">
+            <h2>Biceps</h2>
+            <ul class="exercise-list">
+                <li class="exercise-item">
+                    <div class="exercise-info">
+                        <div class="exercise-name">Barbell Curls</div>
+                        <div class="exercise-details">3 sets x 12 reps | Rest: 60 seconds between sets</div>
+                    </div>
+                    <button class="video-btn" onclick="window.open('https://www.youtube.com/watch?v=ZQWL7omZh94', '_blank')">Watch Tutorial</button>
+                </li>
+                <li class="exercise-item">
+                    <div class="exercise-info">
+                        <div class="exercise-name">Hammer Curls</div>
+                        <div class="exercise-details">3 sets x 12 reps each arm | Rest: 45 seconds between sets</div>
+                    </div>
+                    <button class="video-btn" onclick="window.open('https://www.youtube.com/watch?v=CFBZ4jN1CMI', '_blank')">Watch Tutorial</button>
+                </li>
+                <li class="exercise-item">
+                    <div class="exercise-info">
+                        <div class="exercise-name">Preacher Curls</div>
+                        <div class="exercise-details">3 sets x 12-15 reps | Rest: 60 seconds between sets</div>
+                    </div>
+                    <button class="video-btn" onclick="window.open('https://www.youtube.com/watch?v=sxA__DoLsgo', '_blank')">Watch Tutorial</button>
+                </li>
+            </ul>
+        </div>
+
+        <div class="exercise-section">
+            <h2>Triceps</h2>
+            <ul class="exercise-list">
+                <li class="exercise-item">
+                    <div class="exercise-info">
+                        <div class="exercise-name">Tricep Pushdowns</div>
+                        <div class="exercise-details">4 sets x 12-15 reps | Rest: 60 seconds between sets</div>
+                    </div>
+                    <button class="video-btn" onclick="window.open('https://www.youtube.com/watch?v=JDEDaZTEzGE', '_blank')">Watch Tutorial</button>
+                </li>
+                <li class="exercise-item">
+                    <div class="exercise-info">
+                        <div class="exercise-name">Skull Crushers</div>
+                        <div class="exercise-details">3 sets x 12 reps | Rest: 60 seconds between sets</div>
+                    </div>
+                    <button class="video-btn" onclick="window.open('https://www.youtube.com/watch?v=l3rHYPtMUo8', '_blank')">Watch Tutorial</button>
+                </li>
+                <li class="exercise-item">
+                    <div class="exercise-info">
+                        <div class="exercise-name">Diamond Push-Ups</div>
+                        <div class="exercise-details">3 sets x 12-15 reps | Rest: 45 seconds between sets</div>
+                    </div>
+                    <button class="video-btn" onclick="window.open('https://www.youtube.com/watch?v=XtU2VQVuLYs', '_blank')">Watch Tutorial</button>
+                </li>
+            </ul>
+        </div>
+
+        <div class="exercise-section">
+            <h2>Legs</h2>
+            <ul class="exercise-list">
+                <li class="exercise-item">
+                    <div class="exercise-info">
+                        <div class="exercise-name">Squats</div>
+                        <div class="exercise-details">4 sets x 12 reps | Rest: 90 seconds between sets</div>
+                    </div>
+                    <button class="video-btn" onclick="window.open('https://www.youtube.com/watch?v=YaXPRqUwItQ', '_blank')">Watch Tutorial</button>
+                </li>
+                <li class="exercise-item">
+                    <div class="exercise-info">
+                        <div class="exercise-name">Leg Press</div>
+                        <div class="exercise-details">4 sets x 12-15 reps | Rest: 90 seconds between sets</div>
+                    </div>
+                    <button class="video-btn" onclick="window.open('https://www.youtube.com/watch?v=b0CvIhY8xVg', '_blank')">Watch Tutorial</button>
+                </li>
+                <li class="exercise-item">
+                    <div class="exercise-info">
+                        <div class="exercise-name">Calf Raises</div>
+                        <div class="exercise-details">3 sets x 20 reps | Rest: 45 seconds between sets</div>
+                    </div>
+                    <button class="video-btn" onclick="window.open('https://www.youtube.com/watch?v=H1b_tKeq3Us', '_blank')">Watch Tutorial</button>
+                </li>
+            </ul>
+        </div>
+
+        <div class="exercise-section">
+            <h2>Shoulders</h2>
+            <ul class="exercise-list">
+                <li class="exercise-item">
+                    <div class="exercise-info">
+                        <div class="exercise-name">Military Press</div>
+                        <div class="exercise-details">4 sets x 10-12 reps | Rest: 90 seconds between sets</div>
+                    </div>
+                    <button class="video-btn" onclick="window.open('https://www.youtube.com/watch?v=0rChzYPyuYI', '_blank')">Watch Tutorial</button>
+                </li>
+                <li class="exercise-item">
+                    <div class="exercise-info">
+                        <div class="exercise-name">Lateral Raises</div>
+                        <div class="exercise-details">3 sets x 12-15 reps | Rest: 60 seconds between sets</div>
+                    </div>
+                    <button class="video-btn" onclick="window.open('https://www.youtube.com/watch?v=OuG1smZTsQQ', '_blank')">Watch Tutorial</button>
+                </li>
+                <li class="exercise-item">
+                    <div class="exercise-info">
+                        <div class="exercise-name">Front Raises</div>
+                        <div class="exercise-details">3 sets x 12 reps | Rest: 60 seconds between sets</div>
+                    </div>
+                    <button class="video-btn" onclick="window.open('https://www.youtube.com/watch?v=hRJ6tR5-if0', '_blank')">Watch Tutorial</button>
+                </li>
+            </ul>
+        </div>
+
+        <div class="exercise-section">
+            <h2>Abs</h2>
+            <ul class="exercise-list">
+                <li class="exercise-item">
+                    <div class="exercise-info">
+                        <div class="exercise-name">Crunches</div>
+                        <div class="exercise-details">3 sets x 15-20 reps | Rest: 45 seconds between sets</div>
+                    </div>
+                    <button class="video-btn" onclick="window.open('https://www.youtube.com/watch?v=O0pIQ2UqeCY', '_blank')">Watch Tutorial</button>
+                </li>
+                <li class="exercise-item">
+                    <div class="exercise-info">
+                        <div class="exercise-name">Plank</div>
+                        <div class="exercise-details">3 sets x 30-60 seconds | Rest: 60 seconds between sets</div>
+                    </div>
+                    <button class="video-btn" onclick="window.open('https://www.youtube.com/watch?v=pvIjsG5Svck', '_blank')">Watch Tutorial</button>
+                </li>
+                <li class="exercise-item">
+                    <div class="exercise-info">
+                        <div class="exercise-name">Russian Twists</div>
+                        <div class="exercise-details">3 sets x 20 reps | Rest: 45 seconds between sets</div>
+                    </div>
+                    <button class="video-btn" onclick="window.open('https://www.youtube.com/watch?v=Tau0hsW8iR0', '_blank')">Watch Tutorial</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function showVideo(videoId) {
+            const video = document.getElementById(videoId);
+            video.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html> 

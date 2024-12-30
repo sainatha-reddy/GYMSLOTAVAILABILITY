@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - IIITDM Gym</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                        url('https://imgs.search.brave.com/BU-JLRUowP0ZHyV6zs2tf9XW79bc8UYlfwnlqejM1D8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTI5/NTc2MzcyOC9waG90/by9maXRuZXNzLWhl/YWx0aC1jbHViLmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz1S/Z2hhcU42Z0hYQmdM/akJ3VXlSRTZzVHot/MGJmRGlnSVk1TXFD/WFIxLTYwPQ') no-repeat center center/cover;
+            min-height: 100vh;
+            padding: 20px;
+            color: white;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            padding-top: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .back-button {
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: white;
+            text-decoration: none;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            padding: 10px 20px;
+        }
+
+        .back-button:hover {
+            color: #4CAF50;
+            transform: translateX(-3px);
+        }
+
+        .trainer-card {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .trainer-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #4CAF50;
+        }
+
+        .trainer-info {
+            flex: 1;
+        }
+
+        .trainer-name {
+            font-size: 1.8rem;
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+
+        .trainer-title {
+            font-size: 1.2rem;
+            color: #ddd;
+            margin-bottom: 15px;
+        }
+
+        .contact-details {
+            list-style: none;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .contact-icon {
+            font-size: 1.3rem;
+            color: #4CAF50;
+        }
+
+        @media (max-width: 768px) {
+            .trainer-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .trainer-photo {
+                margin: 0 auto;
+            }
+        }
+
+        .feedback-section {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .feedback-section h2 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .feedback-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .form-group label {
+            color: #ddd;
+            font-size: 1rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .submit-btn {
+            background: #4CAF50;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            align-self: flex-start;
+        }
+
+        .submit-btn:hover {
+            background: #45a049;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="firstpage.html" class="back-button">← Back to Home</a>
+            <h1>Contact Us</h1>
+            <p>Get in touch with our fitness experts</p>
+        </div>
+
+        <div class="trainer-card">
+            <img src="https://imgs.search.brave.com/Oz6UbmmJV-oM9BHJlu6v96kGL3rhEdqiw7xPUiQJu_Q/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTMy/NDA0Mjc2OS9waG90/by9jb25maWRlbnQt/Z3ltLW93bmVyLmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz0y/QVJ2ZVA2bmN0S1ky/VjExODBkQ09YUzd5/SnJaalJnLVRUSURr/YXpvbmQ4PQ" alt="Trainer Photo" class="trainer-photo">
+            <div class="trainer-info">
+                <h2 class="trainer-name">John Smith</h2>
+                <h3 class="trainer-title">Head Fitness Trainer</h3>
+                <ul class="contact-details">
+                    <li class="contact-item">
+                        <span class="contact-icon">📱</span>
+                        <span>+91 98765 43210</span>
+                    </li>
+                    <li class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <span>trainer@iiitdm.ac.in</span>
+                    </li>
+                    <li class="contact-item">
+                        <span class="contact-icon">⏰</span>
+                        <span>Available: Mon-Sat (5:00 AM - 10:00 PM)</span>
+                    </li>
+                    <li class="contact-item">
+                        <span class="contact-icon">🏆</span>
+                        <span>Certified Personal Trainer (CPT)</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="feedback-section">
+            <h2>Feedback & Suggestions</h2>
+            <form class="feedback-form" onsubmit="return submitFeedback(event)">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="type">Type</label>
+                    <select id="type" required>
+                        <option value="suggestion">Suggestion</option>
+                        <option value="complaint">Complaint</option>
+                        <option value="feedback">General Feedback</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function submitFeedback(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const type = document.getElementById('type').value;
+            const message = document.getElementById('message').value;
+
+            // Here you would typically send this data to your server
+            // For demo, we'll show an alert
+            alert('Thank you for your ' + type + '! We will get back to you soon.');
+            
+            // Clear the form
+            event.target.reset();
+            
+            return false;
+        }
+    </script>
+</body>
+</html> 
